@@ -10,12 +10,21 @@ import Instructions from "./Instructions";
           Then complete the rest of your app before attempting to
           refactor to get this Content component to work.
 */
-function Content() {
+
+function Content({currentNote,showEditorSetter,showviewerSetter,showEditor,showViewer}) {
+
+  const onCancelBtnClick = ()=>{
+  showEditorSetter(false);
+  showviewerSetter(true)
+}
   const getContent = () => {
-    if (false) {
-      return <NoteEditor />;
-    } else if (false) {
-      return <NoteViewer />;
+    if (showEditor) {
+      return <NoteEditor onCancelBtnClick={onCancelBtnClick}
+                         currentNote={currentNote}
+      />;
+    } else if (showViewer) {
+      return <NoteViewer currentNote={currentNote} 
+                         showEditorSetter={showEditorSetter} />
     } else {
       return <Instructions />;
     }

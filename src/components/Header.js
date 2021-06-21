@@ -1,11 +1,16 @@
 import React from "react";
 
-function Header() {
+function Header({userData,currentNote}) {
+ console.log(userData)
+   console.log(userData)
+
+  
   return (
     <div className="nav-bar">
       <ul>
         <li className="nav-item">
-          <h2>Your App Title Goes Here</h2>
+          {/* { userData[0].name} */}
+           <h2> {}list </h2> 
         </li>
       </ul>
     </div>
