@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 import Content from "./Content";
 import NoteItem from "./NoteItem";
 
-function NoteContainer({noteData,displayUserinfo,currentNote,showEditor,showEditorSetter,showViewer,showviewerSetter}) {
+function NoteContainer({noteData,displayUserinfo,currentNote,showEditor,showEditorSetter,showViewer,showviewerSetter,updateNote}) {
   // const [filterNotes,setFilterNotes]=useState(noteData)
   const [inputValue,setInputValue]=useState("")
   function searchTerm(e){
@@ -18,7 +18,7 @@ function NoteContainer({noteData,displayUserinfo,currentNote,showEditor,showEdit
       <Search   searchTerm={searchTerm} noteData={noteData} setInputValue={setInputValue} />
       <div className="container">
         <Sidebar noteData={noteData} displayUserinfo={displayUserinfo} filterNotes={filterNotes} />
-        <Content currentNote={currentNote} showEditor={showEditor} showEditorSetter={showEditorSetter} showViewer={showViewer} showviewerSetter={showviewerSetter} />
+        <Content currentNote={currentNote} showEditor={showEditor} showEditorSetter={showEditorSetter} showViewer={showViewer} showviewerSetter={showviewerSetter} updateNote={updateNote} />
       
       </div>
     </>

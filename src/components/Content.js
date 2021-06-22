@@ -11,7 +11,7 @@ import Instructions from "./Instructions";
           refactor to get this Content component to work.
 */
 
-function Content({currentNote,showEditorSetter,showviewerSetter,showEditor,showViewer}) {
+function Content({currentNote,showEditorSetter,showviewerSetter,showEditor,showViewer,updateNote}) {
 
   const onCancelBtnClick = ()=>{
   showEditorSetter(false);
@@ -21,6 +21,7 @@ function Content({currentNote,showEditorSetter,showviewerSetter,showEditor,showV
     if (showEditor) {
       return <NoteEditor onCancelBtnClick={onCancelBtnClick}
                          currentNote={currentNote}
+                          updateNote={updateNote}
       />;
     } else if (showViewer) {
       return <NoteViewer currentNote={currentNote} 

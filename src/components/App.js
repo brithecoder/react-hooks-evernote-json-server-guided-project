@@ -30,12 +30,21 @@ function App() {
        showviewerSetter(true);
     }
 
+     const updateNote = (currentNote) =>{
+       console.log("hello")
+      console.log(noteData.map(note =>{
+        if(note.id===currentNote.id){
+          
+        }
+       }))
+     }
+
     const username = userData[0]
     console.log(username)
   return (
     <div className="app">
       <Header userData={userData} currentNote={currentNote}  />
-      <NoteContainer noteData={noteData} displayUserinfo={displayUserinfo}  currentNote={currentNote}  showEditor={showEditor} showEditorSetter={showEditorSetter} showViewer={showViewer} showviewerSetter={showviewerSetter}  />
+      <NoteContainer noteData={noteData} displayUserinfo={displayUserinfo}  currentNote={currentNote}  showEditor={showEditor} showEditorSetter={showEditorSetter} showViewer={showViewer} showviewerSetter={showviewerSetter} updateNote={updateNote}  />
     </div>
   );
 }
